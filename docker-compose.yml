@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: wallet-db
+    restart: always
+    environment:
+      POSTGRES_USER: wallet_user
+      POSTGRES_PASSWORD: wallet_pass
+      POSTGRES_DB: wallet_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app:
+    build: src
+    container_name: wallet-app
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://wallet_user:wallet_pass@db:5432/wallet_db
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run migrate && npm start"
+
+volumes:
+  db_data:

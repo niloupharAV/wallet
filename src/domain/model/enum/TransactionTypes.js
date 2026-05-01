@@ -1,0 +1,5 @@
+
+export const TRANSACTION_TYPES = {
+    DEPOSIT: 'DEPOSIT',
+    WITHDRAWAL: 'WITHDRAWAL'
+}

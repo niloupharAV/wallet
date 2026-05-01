@@ -1,0 +1,32 @@
+{
+  "name": "wallet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "psql $DATABASE_URL -f migrations/init.sql",
+    "start": "node index.js"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "7.8.0",
+    "crypto": "1.0.1",
+    "dotenv": "17.4.2",
+    "express": "5.2.1",
+    "kafkajs": "^2.2.4",
+    "node-pg-migrate": "^8.0.4",
+    "pg": "8.20.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.1",
+    "globals": "^17.5.0",
+    "nodemon": "^3.1.14",
+    "prisma": "^7.8.0"
+  }
+}
