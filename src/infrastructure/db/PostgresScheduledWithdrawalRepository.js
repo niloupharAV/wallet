@@ -1,4 +1,4 @@
-import {toScheduledWithdrawalDomainModel, toTransactionDomainModel} from "./mapper/Mappers.js";
+import {toScheduledWithdrawalDomainModel} from "./mapper/Mappers.js";
 import {client} from "./config/PgConfig.js";
 import {IScheduledWithdrawalRepository} from "../../application/port/out/repository/IScheduledWithdrawalRepository.js";
 

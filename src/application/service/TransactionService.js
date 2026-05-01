@@ -31,7 +31,7 @@ export class TransactionService {
         } else {
             await StateMachine.transit(transaction,
                 STATES.UNKNOWN,
-                this.inquiryLater().bind(this),
+                this.inquiryLater.bind(this),
                 {});
 
         }

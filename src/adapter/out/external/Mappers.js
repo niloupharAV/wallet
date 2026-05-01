@@ -2,8 +2,6 @@ import {randomUUID} from "crypto";
 import {TRANSACTION_STATUSES} from "../../../domain/model/enum/TransactionStatuses.js";
 
 export function toResult(){
-    return {status: TRANSACTION_STATUSES.FAILED, description: 'INVALID_ACCOUNT'}
-
     const random = Math.random();
     if(random < 0.5) {
         return {status: TRANSACTION_STATUSES.COMMITTED, reference: randomUUID().toString()}
